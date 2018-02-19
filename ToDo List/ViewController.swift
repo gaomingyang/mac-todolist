@@ -10,11 +10,21 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var textField: NSTextField!
+    
+    @IBOutlet weak var importantCheckBox: NSButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func addClicked(_ sender: Any) {
+    }
+    
+    
+    
 
     override var representedObject: Any? {
         didSet {
