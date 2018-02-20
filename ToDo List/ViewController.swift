@@ -17,6 +17,7 @@ class ViewController: NSViewController,NSTableViewDataSource,NSTableViewDelegate
     
     var toDoItems : [ToDoItem] = []
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,9 +40,7 @@ class ViewController: NSViewController,NSTableViewDataSource,NSTableViewDelegate
         tableView.reloadData()
     }
     
-    
-    @IBAction func addClicked(_ sender: Any) {
-        
+    func saveItem() {
         if textField.stringValue != "" {
             // print(textField.stringValue)
             
@@ -68,6 +67,16 @@ class ViewController: NSViewController,NSTableViewDataSource,NSTableViewDelegate
         }
     }
     
+    //点击增加按钮
+    @IBAction func addClicked(_ sender: Any) {
+        saveItem()
+    }
+    
+    //响应回车键
+    @IBAction func enterPressed(_ sender: Any) {
+        saveItem()
+    }
+    
     @IBAction func deleteClicked(_ sender: Any) {
         let toDoItem = toDoItems[tableView.selectedRow]
         
@@ -80,8 +89,6 @@ class ViewController: NSViewController,NSTableViewDataSource,NSTableViewDelegate
             
             deleteButton.isHidden = true
         }
-        
-        
     }
     
     // MARK: - TableView Stuff
